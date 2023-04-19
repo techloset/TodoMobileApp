@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
+const ballon = (require('../asserts/Line.png'))
 import {
     SafeAreaView,
     View,
@@ -15,7 +16,8 @@ import {
 
 } from 'react-native';
 
-const ballon = (require('../asserts/Line.png'))
+
+
 
 const DATA = [
     {
@@ -50,14 +52,20 @@ const DATA = [
 ];
 
 
-const Item = ({ item, handlePress, isPress }: any) => (
+
+const Item = ({ item, handlePress, isPress }) => (
     <TouchableOpacity
         onPress={() => handlePress(item.id)}>
 
 
         <View style={[styles.item, { backgroundColor: isPress === item.id ? '#FF9D00' : 'white' }]}>
-            <Text style={{ fontSize: 36, fontWeight: '700', color: '#000000' }}>{item.id}</Text>
-            <Text style={{ fontSize: 18, fontWeight: '700', color: '#000000' }}>{item.title}</Text>
+
+            <Text style={{ fontSize: 36, fontFamily: 'Montserrat-Bold', color: '#000000' }, { color: isPress === item.id ? 'white' : 'black' }}>{item.id}</Text>
+
+
+
+            <Text style={{ fontSize: 18, fontFamily: 'Montserrat-Bold', color: '#000000' }, { color: isPress === item.id ? 'white' : 'black' }}>{item.title}</Text>
+
 
         </View>
     </TouchableOpacity>
@@ -71,8 +79,10 @@ const App = () => {
         return setPress('3')
 
     }, [])
-    const handlePress = (id: any) => {
+    const handlePress = (id) => {
         setPress(id)
+
+
     }
     return (
         <View style={{ display: 'flex' }}>
@@ -88,7 +98,7 @@ const App = () => {
 
 
             </View>
-            <View style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end', marginTop: 15, marginBottom: 30 }}>
+            <View style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end', marginTop: 18, marginBottom: 13 }}>
                 <ImageBackground source={ballon} style={{ height: 12, width: 232 }}>
 
                     <Image source={require('../asserts/lineCircle.png')} style={{ height: 12, width: 12, marginLeft: -5 }} />
@@ -109,7 +119,7 @@ const styles = StyleSheet.create({
         marginTop: StatusBar.currentHeight || 0,
     },
     item: {
-        backgroundColor: 'white',
+
         width: 59,
         height: 96,
         borderRadius: 30,
@@ -117,9 +127,7 @@ const styles = StyleSheet.create({
         gap: 5,
         marginHorizontal: 10,
     },
-    title: {
-        fontSize: 32,
-    },
+
     scroll: {
     }
 });

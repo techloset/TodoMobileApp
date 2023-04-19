@@ -44,19 +44,32 @@ const Task = ({ navigation }: any) => {
 
 
       </View>
+
       <TouchableOpacity>
+        <View style={{
+          shadowColor: "#EE41E7",
+          shadowOffset: {
+            width: 0,
+            height: 18,
+          },
+          shadowOpacity: 0.25,
+          shadowRadius: 20.00,
+
+          elevation: 24
+        }}>
 
 
-        <LinearGradient colors={['#FF48F8', '#E906E0']} style={{
-          display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center', flexDirection: 'row', alignSelf: 'center', width: 258, height: 58, borderRadius: 15, marginBottom: 20,
+          <LinearGradient colors={['#FF48F8', '#E906E0']} style={{
+            display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center', flexDirection: 'row', alignSelf: 'center', width: 258, height: 58, borderRadius: 15, marginBottom: 20,
 
-        }} >
-          <Text style={{ fontSize: 14, color: 'white', textAlign: 'center', alignItems: 'center', fontFamily: 'Montserrat-Bold', justifyContent: 'center', alignContent: 'center' }} >
-            Add New Task
-          </Text>
-        </LinearGradient>
-
+          }} >
+            <Text style={{ fontSize: 14, color: 'white', textAlign: 'center', alignItems: 'center', fontFamily: 'Montserrat-Bold', justifyContent: 'center', alignContent: 'center' }} >
+              Add New Task
+            </Text>
+          </LinearGradient>
+        </View>
       </TouchableOpacity>
+
 
     </>
 

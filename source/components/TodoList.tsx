@@ -93,7 +93,10 @@ const App = () => {
         return (
             <View style={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center', marginHorizontal: 25, borderBottomWidth: 1, borderColor: '#D7D7D74D' }}>
 
-                <Text style={{ color: '#5D606580', fontSize: 13, fontWeight: '400' }}>{item.time}</Text>
+                <Text style={{
+                    color: '#5D606580', fontSize: 13,
+                    fontFamily: 'Montserrat-Regular',
+                }}>{item.time}</Text>
                 <View style={{ display: 'flex' }} >
                     <Item
                         item={item}
@@ -147,12 +150,15 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 13,
-        fontWeight: '700',
+
+        fontFamily: 'Montserrat-Bold',
+
 
     },
     name: {
         fontSize: 10,
-        fontWeight: '400'
+
+        fontFamily: 'Montserrat-Regular',
     }
 });
 

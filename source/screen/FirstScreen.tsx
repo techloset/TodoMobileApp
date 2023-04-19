@@ -51,8 +51,8 @@ const FirstScreen = ({ navigation }: any) => {
         <View style={{ flex: 8, }}>
 
           <Image source={require('../asserts/mobile.png')} style={{ alignSelf: 'center' }} />
-          <Text style={{ color: '#000000', fontSize: 22, fontWeight: '700', fontFamily: 'Montserrat-Bold', textAlign: 'center', marginTop: 15, }}>Manage your Tasks</Text>
-          <Text style={{ fontSize: 14, fontWeight: '400', color: '#5D6065', fontFamily: 'Montserrat-Regular', width: 240, marginTop: 10, marginBottom: 20, height: 51, textAlign: 'center', alignSelf: 'center' }}>Organise all your to-do`s andlist your
+          <Text style={{ color: '#000000', fontSize: 22, fontFamily: 'Montserrat-Bold', textAlign: 'center', marginTop: 15, }}>Manage your Tasks</Text>
+          <Text style={{ fontSize: 14, color: '#5D6065', fontFamily: 'Montserrat-Regular', width: 240, marginTop: 10, marginBottom: 20, height: 51, textAlign: 'center', alignSelf: 'center' }}>Organise all your to-do`s andlist your
             projects. Color tag them to set priority
             and categories</Text>
         </View>
@@ -75,18 +75,21 @@ const FirstScreen = ({ navigation }: any) => {
           <TouchableOpacity onPress={() => navigation.navigate('Home')} >
             <View style={{ justifyContent: 'center', alignSelf: 'center' }}  >
 
+              <LinearGradient colors={['#F7ADF4', '#E906E0']} style={styles.icon}>
+                <Image source={require('../asserts/vector.png')} style={{ marginTop: 22, marginLeft: 22, height: 21, width: 21 }} />
+
+              </LinearGradient>
 
 
-              <ImageBackground source={circle} style={{ height: 67, width: 67 }}>
-                <Image source={require('../asserts/vector.png')} style={{ marginTop: 18, marginLeft: 22 }} />
 
-              </ImageBackground>
+
             </View>
           </TouchableOpacity>
 
           <View style={styles.footer}>
-            <ImageBackground source={image} style={{ height: 109, display: 'flex', flexDirection: 'column' }} >
+            <ImageBackground source={image} style={{ height: 109, }} >
               <Text style={{ marginTop: 16, marginLeft: 46, color: 'white', fontSize: 14, fontWeight: '400' }}>Back</Text>
+              <Image source={require('../asserts/Option.png')} style={{ width: 46, height: 12, justifyContent: 'flex-end', alignSelf: 'center', alignContent: 'flex-end', alignItems: 'flex-end', display: 'flex', marginVertical: 35 }} />
             </ImageBackground>
 
           </View>
@@ -152,15 +155,21 @@ const styles = StyleSheet.create({
     borderRadius: 67,
   },
   footer: {
+    flex: 1
     // height: 66,
-    display: 'flex',
-    justifyContent: 'flex-end',
-    flexDirection: 'column',
+    // display: 'flex',
+    // justifyContent: 'flex-end',
+    // flexDirection: 'column',
     // alignItems: 'flex-end',
 
 
     // alignSelf: 'flex-end',
-    alignContent: 'flex-end',
+    // alignContent: 'flex-end',
+  },
+  icon: {
+    width: 67, height: 67,
+    borderRadius: 67
+
   }
 
 })

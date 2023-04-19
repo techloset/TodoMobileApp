@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, ScrollView, Pressable, ImageBackground, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient';
 import React from 'react'
-const circle = (require('../asserts/balloon.png'))
+
 const footer = (require('../asserts/Subtract.png'))
 const Home = ({ navigation }) => {
   return (
@@ -29,7 +29,7 @@ const Home = ({ navigation }) => {
 
             <LinearGradient colors={['#FF699F', '#FF005C']} style={styles.linearGradient}>
               <Image source={require('../asserts/Vector1.png')} style={{ width: 21, height: 21, marginLeft: 130, marginTop: 15 }} />
-              <Image source={require('../asserts/app.png')} style={{ marginLeft: -30, marginTop: -40, width: 163, height: 177 }} />
+              <Image source={require('../asserts/app.png')} style={{ marginLeft: -30, marginTop: -50, width: 163, height: 177 }} />
               <Text style={styles.mobile}>Mobile App  Design</Text>
               <Text style={{ fontSize: 9, fontWeight: '400', color: 'white', marginLeft: 20, marginTop: 3 }}>10Tasks</Text>
             </LinearGradient>
@@ -118,23 +118,32 @@ const Home = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate('Task')} >
           <View style={{ display: 'flex', justifyContent: 'center', alignContent: 'center' }}  >
 
+            <LinearGradient colors={['#F7ADF4', '#E906E0']} style={styles.icon}>
+              <Image source={require('../asserts/plus.png')} style={{ marginTop: 23, marginLeft: 23, height: 21, width: 21 }} />
 
-            <ImageBackground source={circle} style={{ height: 67, width: 67, display: 'flex', alignSelf: 'center' }}>
-              <Image source={require('../asserts/plus.png')} style={{ marginTop: 19, marginLeft: 23, width: 21, height: 21 }} />
+            </LinearGradient>
 
-            </ImageBackground>
           </View>
         </TouchableOpacity>
 
-        <View style={{ marginTop: -35 }}>
+        <View style={{ marginTop: -25 }}>
           <ImageBackground source={footer} style={{ height: 81 }}>
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around', alignContent: 'center', marginTop: 30 }}>
+
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 40, marginTop: 30 }}>
+              <View style={{ display: 'flex', flexDirection: 'row', gap: 38 }}>
 
 
-              <Image source={require('../asserts/Menu5.png')} style={{ width: 22, height: 22, }} />
-              <Image source={require('../asserts/Option.png')} style={{ height: 22, width: 22, }} />
-              <Image source={require('../asserts/Option2.png')} style={{ width: 22, height: 23, }} />
-              <Image source={require('../asserts/Group10.png')} style={{ height: 22, width: 18, }} />
+
+
+                <Image source={require('../asserts/Menu5.png')} style={{ width: 22, height: 22, }} />
+                <Image source={require('../asserts/Option.png')} style={{ height: 22, width: 22, }} />
+
+              </View>
+              <View style={{ display: 'flex', flexDirection: 'row', gap: 38 }}>
+
+                <Image source={require('../asserts/Option2.png')} style={{ width: 22, height: 23, }} />
+                <Image source={require('../asserts/Group10.png')} style={{ height: 22, width: 18, }} />
+              </View>
             </View>
           </ImageBackground>
         </View>
@@ -171,6 +180,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 10
 
   },
+  icon: {
+    width: 67,
+    height: 67,
+    borderRadius: 67,
+    display: 'flex',
+
+    alignSelf: 'center'
+
+  },
+
   buttonText: {
     fontSize: 18,
   },
@@ -179,7 +198,7 @@ const styles = StyleSheet.create({
     color: 'white',
     width: 120,
     fontWeight: '700',
-    marginTop: -40,
+    marginTop: -30,
     marginLeft: 20
   },
   secLinear: {
