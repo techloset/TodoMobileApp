@@ -3,7 +3,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import React from 'react'
 
 const footer = (require('../asserts/Subtract.png'))
-const Home = ({ navigation }) => {
+const Home = ({ navigation }: any) => {
   return (
     <ScrollView style={{ flex: 1, }} >
       <View style={styles.first}>
@@ -16,25 +16,6 @@ const Home = ({ navigation }) => {
       <View style={{ flex: 5, justifyContent: 'space-around', alignContent: 'space-around', display: 'flex', flexDirection: 'row', marginHorizontal: 12 }}>
         <View style={styles.box1}>
           <View style={{
-            shadowColor: "#FF015C",
-            shadowOffset: {
-              width: 0,
-              height: 18,
-            },
-            shadowOpacity: 0.25,
-
-            shadowRadius: 20.00,
-            elevation: 24
-          }}>
-
-            <LinearGradient colors={['#FF699F', '#FF005C']} style={styles.linearGradient}>
-              <Image source={require('../asserts/Vector1.png')} style={{ width: 21, height: 21, marginLeft: 130, marginTop: 15 }} />
-              <Image source={require('../asserts/app.png')} style={{ marginLeft: -30, marginTop: -50, width: 163, height: 177 }} />
-              <Text style={styles.mobile}>Mobile App  Design</Text>
-              <Text style={{ fontSize: 9, fontWeight: '400', color: 'white', marginLeft: 20, marginTop: 3 }}>10Tasks</Text>
-            </LinearGradient>
-          </View>
-          <View style={{
             shadowColor: "#962DFF",
             shadowOffset: {
               width: 0,
@@ -46,10 +27,22 @@ const Home = ({ navigation }) => {
 
           }}>
 
+            <LinearGradient colors={['#FF699F', '#FF005C']} style={styles.linearGradient}>
+              <Image source={require('../asserts/Vector1.png')} style={{ width: 21, height: 21, marginLeft: 130, marginTop: 15 }} />
+              <Image source={require('../asserts/app.png')} style={{ marginLeft: -30, marginTop: -50, width: 163, height: 177 }} />
+              <Text style={styles.mobile}>Mobile App  Design</Text>
+              <Text style={{ fontSize: 9, fontFamily: 'Montserrat-Regular', color: 'white', marginLeft: 20, marginTop: 3 }}>10Tasks</Text>
+            </LinearGradient>
+          </View>
+          <View style={{
+
+
+          }}>
+
             <LinearGradient colors={['#CFA1FE', '#8205FF']} style={styles.thirdLinear}>
               <Image source={require('../asserts/pencil.png')} style={{ marginLeft: -10, marginTop: -20, width: 116, height: 118 }} />
               <Text style={styles.pending}>Logo </Text>
-              <Text style={{ fontSize: 9, fontWeight: '400', color: 'white', marginLeft: 20, marginTop: 12 }}>2 Tasks</Text>
+              <Text style={{ fontSize: 9, fontFamily: 'Montserrat-Regular', color: 'white', marginLeft: 20, marginTop: 12 }}>2 Tasks</Text>
               <Image source={require('../asserts/Vector1.png')} style={{ width: 21, height: 21, marginLeft: 120, marginTop: -20 }} />
             </LinearGradient>
           </View>
@@ -61,18 +54,18 @@ const Home = ({ navigation }) => {
 
             shadowOffset: {
               width: 0,
-              height: 18,
+              height: 5,
             },
             shadowOpacity: 0.25,
-            shadowRadius: 20.00,
-            elevation: 24
+            shadowRadius: 15.00,
+            elevation: 20
           }}>
 
             <LinearGradient colors={['#FFCA0F', '#F36803FC']} style={styles.secLinear}>
               <Image source={require('../asserts/Vector1.png')} style={{ width: 21, height: 21, marginLeft: 120, marginTop: 15 }} />
               <Image source={require('../asserts/pending.png')} style={{ marginLeft: -10, marginTop: -45, width: 116, height: 118 }} />
               <Text style={styles.pending}>Pending </Text>
-              <Text style={{ fontSize: 9, fontWeight: '400', color: 'white', marginLeft: 20, marginTop: 12 }}>16 Tasks</Text>
+              <Text style={{ fontSize: 9, fontFamily: 'Montserrat-Regular', color: 'white', marginLeft: 20, marginTop: 12 }}>16 Tasks</Text>
             </LinearGradient>
           </View>
           <View style={{
@@ -83,7 +76,7 @@ const Home = ({ navigation }) => {
               <Image source={require('../asserts/web.png')} style={{ marginLeft: 7, marginTop: 20, width: 91, height: 108 }} />
               <Text style={styles.wesite}>Website
                 Design</Text>
-              <Text style={{ fontSize: 9, fontWeight: '400', color: 'white', marginLeft: 20, marginTop: 3 }}>16 Tasks</Text>
+              <Text style={{ fontSize: 9, fontFamily: 'Montserrat-Regular', color: 'white', marginLeft: 20, marginTop: 3 }}>16 Tasks</Text>
               <Image source={require('../asserts/Vector1.png')} style={{ width: 21, height: 21, marginLeft: 120, marginTop: -20 }} />
             </LinearGradient>
           </View>
@@ -175,9 +168,14 @@ const styles = StyleSheet.create({
     width: 166,
     borderRadius: 20,
 
-    elevation: 20,
-    shadowColor: "red",
-    shadowOpacity: 10
+    shadowColor: "#FF015C",
+    shadowOffset: {
+      width: 12,
+      height: 24,
+    },
+    shadowOpacity: 2.25,
+    shadowRadius: 16.00,
+    elevation: 32
 
   },
   icon: {
@@ -205,6 +203,14 @@ const styles = StyleSheet.create({
     width: 156,
     height: 145,
     borderRadius: 20,
+    shadowColor: "#962DFF",
+    shadowOffset: {
+      width: 20,
+      height: 40,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 20,
+    elevation: 50
 
   },
   pending: {
@@ -219,14 +225,17 @@ const styles = StyleSheet.create({
     width: 157,
     height: 135,
     borderRadius: 20,
-    shadowColor: "red",
+    backgroundColor: '',
+    elevation: 10,
+    shadowColor: '#962DFF',
     shadowOffset: {
-      width: 0,
-      height: 18,
+      width: 20,
+      height: 40,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 20.00,
-    elevation: 24
+    shadowOpacity: 1,
+    shadowRadius: 30,
+
+
 
   },
   box1: {

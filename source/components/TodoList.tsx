@@ -50,18 +50,28 @@ type ItemProps = {
     item: ItemData;
     onPress: () => void;
     backgroundColor: string;
+
     textColor: string,
+    selected: boolean;
 
 
 };
 
-const Item = ({ item, onPress, backgroundColor, textColor }: ItemProps) => (
-    <TouchableOpacity onPress={onPress} style={[styles.item, { backgroundColor }]}>
+const Item = ({ item, onPress, backgroundColor, textColor, selected }: ItemProps) => (
+    <TouchableOpacity
+        onPress={onPress}
+        style={[
+            styles.item,
+            { backgroundColor },
+            selected ? styles.itemSelected : null,
+        ]}
+    >
         <Text style={[styles.title, { color: textColor }]}>{item.title}</Text>
-        <Text style={[styles.name, { color: textColor }]}>{item.name}</Text>
 
+        <Text style={[styles.name, { color: textColor }]}>{item.name}</Text>
     </TouchableOpacity>
 );
+
 
 const App = () => {
     const [selectedId, setSelectedId] = useState<string>();
@@ -71,22 +81,14 @@ const App = () => {
 
     }, [])
     const renderItem = ({ item }: { item: ItemData }) => {
+        let backgroundColor = 'white';
+        let shadow = 'none';
+        let color = '#6C6868';
 
-
-        let backgroundColor = item.id === selectedId ? '#01D0DE' : 'white';
-        let color = item.id === selectedId ? 'white' : '#6C6868';
-
-
-
-
-        // else if (item.id === '3') {
-        //     backgroundColor = '#01D0DE';
-        //     color = 'white'
-        // }
-        // else if (item.id === '4') {
-        //     backgroundColor = '#01D0DE';
-        //     color = 'white'
-        // }
+        if (item.id === selectedId) {
+            backgroundColor = '#01D0DE';
+            color = 'white';
+        }
 
 
 
@@ -103,7 +105,7 @@ const App = () => {
                         onPress={() => setSelectedId(item.id)}
                         backgroundColor={backgroundColor}
                         textColor={color}
-
+                        selected={item.id === selectedId}
                     />
                 </View>
 
@@ -134,7 +136,6 @@ const App = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
     },
     item: {
         padding: 10,
@@ -144,22 +145,28 @@ const styles = StyleSheet.create({
         width: 258,
         height: 58,
         borderRadius: 15,
+    },
+    itemSelected: {
+        shadowColor: '#01D0DE',
+        elevation: 50,
 
-
+        shadowOffset: {
+            width: 20,
+            height: 40,
+        },
+        shadowOpacity: 1,
+        shadowRadius: 30,
 
     },
     title: {
         fontSize: 13,
-
         fontFamily: 'Montserrat-Bold',
-
-
     },
     name: {
         fontSize: 10,
-
         fontFamily: 'Montserrat-Regular',
-    }
+    },
 });
+
 
 export default App;

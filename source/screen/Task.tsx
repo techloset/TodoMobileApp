@@ -17,7 +17,7 @@ const Task = ({ navigation }: any) => {
         </View>
         <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 21, marginTop: 25 }}>
           <View style={{ display: 'flex' }}>
-            <Text style={{ fontSize: 24, color: '#000000', fontFamily: 'Montserrat-Bold', }}>June, 3</Text>
+            <Text style={{ fontSize: 24, color: '#000000', fontFamily: 'Montserrat-Bold', }}>June, 03</Text>
             <Text style={{ fontSize: 13, color: '#5D6065', fontFamily: 'Montserrat-Regular', }}>16 task today</Text>
           </View>
           <View style={{

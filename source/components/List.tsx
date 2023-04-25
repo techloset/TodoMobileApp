@@ -60,11 +60,9 @@ const Item = ({ item, handlePress, isPress }) => (
 
         <View style={[styles.item, { backgroundColor: isPress === item.id ? '#FF9D00' : 'white' }]}>
 
-            <Text style={{ fontSize: 36, fontFamily: 'Montserrat-Bold', color: '#000000' }, { color: isPress === item.id ? 'white' : 'black' }}>{item.id}</Text>
+            <Text style={{ fontSize: 36, fontFamily: 'Montserrat-Bold', color: isPress === item.id ? 'white' : '#000000' }}>{item.id}</Text>
 
-
-
-            <Text style={{ fontSize: 18, fontFamily: 'Montserrat-Bold', color: '#000000' }, { color: isPress === item.id ? 'white' : 'black' }}>{item.title}</Text>
+            <Text style={{ fontSize: 18, fontFamily: 'Montserrat-Bold', color: isPress === item.id ? 'white' : '#000000' }}>{item.title}</Text>
 
 
         </View>
@@ -74,7 +72,7 @@ const Item = ({ item, handlePress, isPress }) => (
 
 const App = () => {
 
-    const [isPress, setPress] = useState < string > ()
+    const [isPress, setPress] = useState<string>()
     useEffect(() => {
         return setPress('3')
 
@@ -99,9 +97,9 @@ const App = () => {
 
             </View>
             <View style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end', marginTop: 18, marginBottom: 13 }}>
-                <ImageBackground source={ballon} style={{ height: 12, width: 232 }}>
+                <ImageBackground source={ballon} style={{ height: 4, width: 232 }}>
 
-                    <Image source={require('../asserts/lineCircle.png')} style={{ height: 12, width: 12, marginLeft: -5 }} />
+                    <Image source={require('../asserts/lineCircle.png')} style={{ height: 12, width: 12, marginTop: -5, marginLeft: -8 }} />
 
 
                 </ImageBackground>

@@ -52,7 +52,7 @@ const FirstScreen = ({ navigation }: any) => {
 
           <Image source={require('../asserts/mobile.png')} style={{ alignSelf: 'center' }} />
           <Text style={{ color: '#000000', fontSize: 22, fontFamily: 'Montserrat-Bold', textAlign: 'center', marginTop: 15, }}>Manage your Tasks</Text>
-          <Text style={{ fontSize: 14, color: '#5D6065', fontFamily: 'Montserrat-Regular', width: 240, marginTop: 10, marginBottom: 20, height: 51, textAlign: 'center', alignSelf: 'center' }}>Organise all your to-do`s andlist your
+          <Text style={{ fontSize: 14, color: '#5D6065', fontFamily: 'Montserrat-Regular', width: 271, marginTop: 10, marginBottom: 20, height: 51, textAlign: 'center', alignSelf: 'center' }}>Organise all your to-do`s andlist your
             projects. Color tag them to set priority
             and categories</Text>
         </View>
@@ -88,7 +88,7 @@ const FirstScreen = ({ navigation }: any) => {
 
           <View style={styles.footer}>
             <ImageBackground source={image} style={{ height: 109, }} >
-              <Text style={{ marginTop: 16, marginLeft: 46, color: 'white', fontSize: 14, fontWeight: '400' }}>Back</Text>
+              <Text style={{ marginTop: 16, marginLeft: 46, color: 'white', fontSize: 14, fontFamily: 'Montserrat-Regular', }}>Back</Text>
               <Image source={require('../asserts/Option.png')} style={{ width: 46, height: 12, justifyContent: 'flex-end', alignSelf: 'center', alignContent: 'flex-end', alignItems: 'flex-end', display: 'flex', marginVertical: 35 }} />
             </ImageBackground>
 
